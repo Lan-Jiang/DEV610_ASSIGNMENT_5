@@ -8,7 +8,6 @@ public class ch14ex7_reverseHalf {
         Stack<Integer> stack = new Stack<>();
         int size = queue.size();
 
-        // Move elements in odd-numbered positions to the stack
         for (int i = 0; i < size; i++) {
             int num = queue.poll();
             if (i % 2 != 0) {
@@ -17,7 +16,6 @@ public class ch14ex7_reverseHalf {
             queue.add(num);
         }
 
-        // Enqueue elements from the stack back to the queue at odd positions
         for (int i = 0; i < size; i++) {
             int num = queue.poll();
             if (i % 2 != 0) {
@@ -38,9 +36,9 @@ public class ch14ex7_reverseHalf {
         queue.add(12);
         queue.add(0);
 
-        System.out.println("Original queue: " + queue);
+
         reverseHalf(queue);
-        System.out.println("Reversed half queue: " + queue);
+        System.out.println(queue);
     }
 
 

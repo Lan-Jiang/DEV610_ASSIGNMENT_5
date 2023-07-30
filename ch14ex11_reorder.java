@@ -4,16 +4,14 @@ import java.util.Stack;
 
 public class ch14ex11_reorder {
 
-  public static void reorder(Queue<Integer> queue) {
+    public static void reorder(Queue<Integer> queue) {
         Stack<Integer> stack = new Stack<>();
 
-        // Push elements from the queue to the stack in non-decreasing order
         while (!queue.isEmpty()) {
             int current = queue.poll();
             if (stack.isEmpty() || current >= Math.abs(stack.peek())) {
                 stack.push(current);
             } else {
-                // Reorder elements in the stack to maintain non-decreasing order
                 while (!stack.isEmpty() && current < Math.abs(stack.peek())) {
                     queue.add(stack.pop());
                 }
@@ -21,7 +19,6 @@ public class ch14ex11_reorder {
             }
         }
 
-        // Enqueue elements from the stack back to the queue
         while (!stack.isEmpty()) {
             queue.add(stack.pop());
         }
@@ -39,10 +36,7 @@ public class ch14ex11_reorder {
         queue.add(12);
         queue.add(-15);
 
-        System.out.println("Original queue: " + queue);
         reorder(queue);
-        System.out.println("Reordered queue: " + queue);
+        System.out.println(queue);
     }
-
-
 }

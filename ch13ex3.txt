@@ -1,0 +1,18 @@
+Suppose the following array has been declared:
+// index 0 1 2 3 4 5 6 7 8 9
+10 11 12 13 14
+int[] numbers = {0, 0, 5, 10, 15, 40, 55, 60, 65, 70,
+80, 85, 90, 95, 300};
+What indexes will be examined as the middle element by a
+binary search for each of the following target values? What
+value will be returned?
+a. 65
+b. 9
+c. 90
+d. 147
+
+Answer:
+a.65: middle index 8 (value = 65, which is the target value)
+b.9: cannot be found, return -1
+c.90: middle index 12 (value = 90, which is the target value)
+d.147: cannot be found, return -1

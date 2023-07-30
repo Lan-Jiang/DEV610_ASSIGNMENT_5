@@ -8,7 +8,6 @@ public class ch14ex1_splitStack {
         Queue<Integer> queue = new LinkedList<>();
         int negativesCount = 0;
 
-        // Move elements from the stack to the queue, counting the number of negative elements
         while (!stack.isEmpty()) {
             int num = stack.pop();
             if (num < 0) {
@@ -17,7 +16,6 @@ public class ch14ex1_splitStack {
             queue.add(num);
         }
 
-        // Move elements back from the queue to the stack in the desired order
         while (!queue.isEmpty()) {
             int num = queue.remove();
             if (num < 0) {
@@ -26,7 +24,6 @@ public class ch14ex1_splitStack {
             stack.push(num);
         }
 
-        // Move negative elements to the bottom of the stack
         for (int i = 0; i < negativesCount; i++) {
             stack.push(stack.pop());
         }
@@ -40,9 +37,8 @@ public class ch14ex1_splitStack {
         stack.push(2);
         stack.push(-4);
 
-        System.out.println("Original stack: " + stack);
         splitStack(stack);
-        System.out.println("Rearranged stack: " + stack);
+        System.out.println(stack);
     }
 
 
